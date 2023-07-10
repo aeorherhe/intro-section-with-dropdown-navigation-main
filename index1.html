@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .nav-menu,
+      .nav-lists,
+      .login {
+        display: flex;
+        gap: 1rem;
+        margin: 2rem;
+        align-items: center;
+      }
+
+      .nav-lists a {
+        display: block;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-menu">
+      <!-- <div class="nav-close-icon">
+        <img src="./images/icon-close-menu.svg" alt="" class="nav-close" />
+      </div> -->
+      <div class="nav-lists">
+        <div class="features">
+          <div class="features-header">
+            <a href="#">Features</a>
+            <img src="./images/icon-arrow-down.svg" alt="" class="arrow-up" />
+          </div>
+          <div class="features-lists">
+            <li>
+              <img src="./images/icon-todo.svg" alt="" />
+              <a href="#">Todo List</a>
+            </li>
+            <li>
+              <img src="./images/icon-calendar.svg" alt="" />
+              <a href="#">Calender</a>
+            </li>
+            <li>
+              <img src="./images/icon-reminders.svg" alt="" />
+              <a href="#">Reminders</a>
+            </li>
+            <li>
+              <img src="./images/icon-planning.svg" alt="" />
+              <a href="#">Planning</a>
+            </li>
+          </div>
+        </div>
+        <div class="about">
+          <div class="about-header">
+            <a href="#">Company</a>
+            <img src="./images/icon-arrow-down.svg" alt="" class="arrow-up" />
+          </div>
+          <div class="about-lists">
+            <a href="#">History</a>
+            <a href="#">Our Team</a>
+            <a href="#">Blog</a>
+          </div>
+        </div>
+        <a href="#">Careers</a>
+        <a href="#">About</a>
+      </div>
+      <div class="login">
+        <a href="#">Login</a>
+        <button class="nav-btn btn">Register</button>
+      </div>
+    </div>
+  </body>
+</html>
