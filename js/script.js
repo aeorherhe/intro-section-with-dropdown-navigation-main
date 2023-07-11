@@ -5,7 +5,7 @@ const main = document.querySelector(".main");
 const sectionOverlay = document.querySelector(".overlay");
 const menuLists = document.querySelectorAll(".list-items ");
 const navMenu = document.querySelectorAll(".nav-menu ");
-// const menuLists = document.querySelectorAll(".features , .about  ");
+const navbar = document.querySelector(".navbar ");
 
 // show navmenu
 navOpen.addEventListener("click", () => {
@@ -24,29 +24,39 @@ function hideNavMenu(param) {
 hideNavMenu(navClose);
 hideNavMenu(sectionOverlay);
 
-console.log(navMenu);
-navMenu.forEach(function (navMenu) {
-  if (navMenu.classList.contains("mobile-login")) {
-  }
-});
-menuLists.forEach(function (menus) {
-  const menusHeader = menus.querySelectorAll(
-    ".features-header *, .about-header *"
-  );
-  menusHeader.forEach(function (menuHeader) {
-    menuHeader.addEventListener("click", () => {
-      menuLists.forEach(function (menu) {
-        if (menu !== menuHeader) {
-          menu.classList.remove("show-lists");
-        }
-      });
-
-      menus.classList.add("show-lists");
-      if (menus.classList.contains("show-lists")) {
-        menuHeader.addEventListener("click", () => {
-          menus.classList.toggle("show-lists");
+function showNavLists(menubar, event) {
+  menubar.forEach(function (menus) {
+    const menusHeader = menus.querySelectorAll(
+      ".features-header *, .about-header *"
+    );
+    menusHeader.forEach(function (menuHeader) {
+      menuHeader.addEventListener(event, () => {
+        menubar.forEach(function (menu) {
+          if (menu !== menuHeader) {
+            menu.classList.remove("show-lists");
+          }
         });
-      }
+
+        menus.classList.add("show-lists");
+        sectionOverlay.addEventListener("mouseover", () => {
+          menus.classList.remove("show-lists");
+        });
+      });
     });
   });
+}
+
+navbar.addEventListener("mouseover", () => {
+  let desktopScreen = window.matchMedia("(min-width:45rem)");
+  if (!desktopScreen.matches) {
+    // main.classList.remove("show-navbar");
+    showNavLists(menuLists, "click");
+  } else {
+    showNavLists(menuLists, "mouseover");
+  }
+});
+
+sectionOverlay.addEventListener("mouseover", () => {
+  console.log("hello world");
+  //  menus.classList.remove("show-lists");
 });
